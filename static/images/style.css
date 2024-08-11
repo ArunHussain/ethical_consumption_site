@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0c0ff;
+    padding: 10px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header .nav-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header .nav-links ul li {
+    margin: 0 10px;
+}
+
+.header .nav-links ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.header .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.header .search-bar input[type="text"] {
+    padding: 5px;
+}
+
+.header .search-bar button {
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.dropdown .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.home-content {
+    background-color: #add8e6;
+    padding: 20px;
+}
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro-section h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.intro-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.survey-link {
+    margin-left: 10px;
+    font-size: 1em;
+    color: #0000ff;
+    text-decoration: none;
+}
+
+.survey-link span {
+    text-decoration: underline;
+}
+
+.forum-section {
+    background-color: #ffccff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.forum-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.forum-posts {
+    display: flex;
+    justify-content: space-around;
+}
+
+.forum-post {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 45%;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.verified {
+    color: green;
+}
+
+.post-tags {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.post-tags .tag {
+    margin-right: 5px;
+}
+
+.post-content {
+    font-size: 0.9em;
+}
+
+.company-page {
+    padding: 20px;
+}
+
+.company-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.company-header img {
+    height: 100px;
+}
+
+.company-header h1 {
+    font-size: 36px;
+}
+
+.company-header .rating {
+    font-size: 24px;
+}
+
+.company-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.company-info .key-information,
+.company-info .statistics,
+.company-info .news {
+    width: 30%;
+}
+
+.certificates {
+    margin-top: 20px;
+}
+
+.certificates .certificate-icons img {
+    height: 50px;
+    margin-right: 10px;
+}

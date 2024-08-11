@@ -1,0 +1,136 @@
+{% extends 'webpages/base.html' %}
+{% load static %}
+
+
+
+
+
+
+
+{% block content %}
+<main>
+    <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-5 bg-primary text-white" >
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="fw-bolder display-2">
+                <span style="font-size: 80%">
+                Showing results for  <i>{{ query }}</i>
+                </span>
+              </h1>
+              </div>
+          </div>
+        </div>
+    
+        <figure class="position-absolute bottom-0 left-0 w-100000 d-none d-md-block mb-n2"><svg class="fill-white"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+            <path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+          </svg></figure>
+      </section>
+
+      <div class="section section-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <div class="col-12 text-center">
+                    <div class="alert alert-primary" role="alert">
+                        <div class="row justify-content-center mb-5 mb-lg-2">
+                          <div class="col-6 col-md-6 text-center mb-4">  
+                            <div class="col-12 text-center">
+                              <h1 class="fw-bolder display-3">
+                                <span style="font-size: 28px">Company Results</span>
+                              </h1>
+                            </div>
+                            <br>
+                            {% for comp in matches %}{% for rating in ratings %}
+                              {% if forloop.counter == forloop.parentloop.counter %}
+                                <a href="{% url 'company_page' company_name=comp %}">
+                                <span style="font-size: 20px;">{{ comp }}</span>
+                                {% if rating == 0 %}
+                                
+                                {% endif %}
+                                {% if rating == 1 %}
+                                ⭐
+                                {% endif %}
+                                {% if rating == 2 %}
+                                ⭐⭐
+                                {% endif %}
+                                {% if rating == 3 %}
+                                ⭐⭐⭐
+                                {% endif %}
+                                {% if rating == 4 %}
+                                ⭐⭐⭐⭐
+                                {% endif %}
+                                {% if rating == 5 %}
+                                ⭐⭐⭐⭐⭐
+                                {% endif %}
+
+                                <br><br>
+                                </a>
+                              {% endif %}
+                            {% endfor %}{% endfor %}
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if completed_survey %}
+        <div class="section section-md">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                    <div class="col-12 text-center">
+                      <div class="alert alert-primary" role="alert">
+                          <div class="row justify-content-center mb-5 mb-lg-2">
+                            <div class="col-6 col-md-6 text-center mb-4">  
+                              <div class="col-12 text-center">
+                                <h1 class="fw-bolder display-3">
+                                  <span style="font-size: 28px">Product Results</span>
+                                </h1>
+                                
+                                  <span style="font-size: 13px">The following companies align with the preferences you told us and sell the product you searched</span>
+                               
+                              </div>
+                              <br>
+                              {% for comp in product_matches %}{% for rating in product_company_ratings %}
+                                {% if forloop.counter == forloop.parentloop.counter %}
+                                  <a href="{% url 'company_page' company_name=comp %}">
+                                  <span style="font-size: 20px;">{{ comp }}</span>
+                                  {% if rating == 0 %}
+                                   
+                                  {% endif %}
+                                  {% if rating == 1 %}
+                                  ⭐
+                                  {% endif %}
+                                  {% if rating == 2 %}
+                                  ⭐⭐
+                                  {% endif %}
+                                  {% if rating == 3 %}
+                                  ⭐⭐⭐
+                                  {% endif %}
+                                  {% if rating == 4 %}
+                                  ⭐⭐⭐⭐
+                                  {% endif %}
+                                  {% if rating == 5 %}
+                                  ⭐⭐⭐⭐⭐
+                                  {% endif %}
+  
+                                  <br><br>
+                                  </a>
+                                {% endif %}
+                              {% endfor %}{% endfor %}
+                            </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        {% endif %}
+             
+      <section class="section section-lg " style="min-height:0.1vh"> 
+        
+      </section>
+
+
+</main>
+ 
+{% endblock content %}

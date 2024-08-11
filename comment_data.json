@@ -1,0 +1,38 @@
+[
+    {
+        "model": "home.comments",
+        "pk":1,
+        "fields":{
+            "username":"aaron",
+            "companyname":"Amazon",
+            "body":"love this company",
+            "upvotes":10,
+            "downvotes":2,
+            "date":"23 Aug 2024"
+        }
+    },
+    {
+        "model": "home.comments",
+        "pk":2,
+        "fields":{
+            "username":"hari",
+            "companyname":"Amazon",
+            "body":"not the best",
+            "upvotes":11,
+            "downvotes":23,
+            "date":"25 Aug 2024"
+        }
+    },
+    {
+        "model": "home.comments",
+        "pk":3,
+        "fields":{
+            "username":"aarit",
+            "companyname":"Amazon",
+            "body":"decent",
+            "upvotes":4,
+            "downvotes":1,
+            "date":"26 Aug 2024"
+        }
+    }
+]

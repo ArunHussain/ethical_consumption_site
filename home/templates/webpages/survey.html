@@ -1,0 +1,124 @@
+{% extends 'webpages/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-5 bg-primary text-white" style="min-height:100vh" >
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="fw-bolder display-2">
+                <span style="font-size: 50%">
+                Answer the questions below using the checkboxes
+                </span>
+              </h1>
+              <br>
+              <h1 class="fw-bolder display-3">
+                <span style="font-size: 50%">
+                    <form method="post" class="mt-4" action="{% url 'survey' %}">
+                        {% csrf_token %}
+                        <!-- Form -->
+                        
+                        <div class="form-group mb-4">
+                          <div class="col-6 col-md-12 text-center mb-4">
+                            <div class="alert alert-primary" role="alert">
+                            <h1 class="fw-bolder display-3">
+                              <span style="font-size: 50%; color: black;">
+                                Social Preferences
+                              </span>
+                            </h1>
+                            </div>
+                          </div>
+                                {{ form.supports_fairtrade.label }}
+                                <label for="email">{{ form.supports_fairtrade }}</label>
+                                <br><br>
+                                {{ form.supports_nochildlabor.label }}
+                                <label for="email">{{ form.supports_nochildlabor }}</label>
+                                <br><br>
+                                Are workers' rights and benefits within a company important to you when purchasing?
+                                <label for="email">{{ form.placeholder }}</label>
+                                <br><br>
+                                Would you prefer companies that practice philanthropy?
+                                <label for="email">{{ form.placeholder }}</label>
+                                <br><br><br>
+                                <div class="form-group mb-4">
+                                  <div class="col-6 col-md-12 text-center mb-4">
+                                    <div class="alert alert-primary" role="alert">
+                                    <h1 class="fw-bolder display-3">
+                                      <span style="font-size: 50%; color: black;">
+                                        Environmental Preferences
+                                      </span>
+                                    </h1>
+                                    </div>
+                                  </div>
+                                {{ form.supports_lowcarbonemissions.label }}
+                                <label for="email">{{ form.supports_lowcarbonemissions }}</label>
+                                <br><br>
+                                Does a company need strong waste reduction practices for you to purchase from them?
+                                <label for="email">{{ form.placeholder }}</label>
+                                <br><br>
+                                Do you want companies you purchase from to invest in renewable energy and other environmental sustainability initiatives?
+                                <label for="email">{{ form.placeholder }}</label>
+                                <br><br>
+                                {{ form.supports_noanimaltesting.label }}
+                                <label for="email">{{ form.supports_noanimaltesting }}</label>
+
+                                <br><br><br>
+                                <div class="form-group mb-4">
+                                  <div class="col-6 col-md-12 text-center mb-4">
+                                    <div class="alert alert-primary" role="alert">
+                                    <h1 class="fw-bolder display-3">
+                                      <span style="font-size: 50%; color: black;">
+                                        Political Preferences
+                                      </span>
+                                    </h1>
+                                    </div>
+                                  </div>
+                                
+                                Are you boycotting companies with ties to Israel?
+                                <label for="email">{{ form.placeholder }}</label>
+                                <br><br>
+                                Are you boycotting companies with ties to Palestine?
+                                <label for="email">{{ form.placeholder }}</label>
+                                <br><br>
+                                Do you mind purchasing from companies with ties to militaries?
+                                <label for="email">{{ form.placeholder }}</label>
+                                <br><br>
+
+                        </div>
+                        
+
+
+                                           
+                        
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        
+                    </form>
+                </span>
+              </h1>
+              </div>
+          </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    
+       
+
+
+
+{% endblock content %}
+
+
+<!--
+<div class="home-content">
+    <div class="intro-section">
+        <h1>Please fill out your preferences below</h1>
+        <p>
+        <form action = "{% url 'survey' %}" method = 'post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+         
+        <button name ="submit" class = "signup-btn"> Save Answers </button>    
+        </form>
+        </p>
+
+    </div>
+</div> -->

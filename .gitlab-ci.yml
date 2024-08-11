@@ -1,0 +1,39 @@
+# The Docker image that will be used to build your app
+image: python:latest
+
+# Change pip's cache directory to be inside the project directory since we can
+# only cache local items.
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+# https://pip.pypa.io/en/stable/topics/caching/
+cache:
+  paths:
+    - .cache/pip
+
+before_script:
+  - pip install setuptools wheel
+  
+build-job:
+  stage: build
+  script:
+    - python --version ; pip --version  # For debugging
+    - pip install virtualenv
+    - virtualenv venv
+    - source venv/bin/activate
+    - python -m pip install -r requirements.txt
+test-job:
+  stage: test
+  script:
+    - python -m pytest
+deploy-heroku:
+  stage: deploy
+  variables:
+    HEROKU_APP: drp-56
+  only:
+    - master
+  script:
+    - apt-get update -yq
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP --api-key=$HEROKU_TOKEN

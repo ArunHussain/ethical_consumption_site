@@ -1,0 +1,222 @@
+{% extends 'webpages/base.html' %}
+{% load static %}  
+{% block content %}
+<main>
+  
+
+    <!-- Hero -->
+    <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-5 bg-primary text-white">
+        <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+            <h1 class="fw-bolder display-2">
+               {{ company_name }} 
+            </h1>
+            <span style = "font-size: 25px;">
+            {% if rating == 1 %}
+            ⭐
+            {% endif %}
+            {% if rating == 2 %}
+            ⭐⭐
+            {% endif %}
+            {% if rating == 3 %}
+            ⭐⭐⭐
+            {% endif %}
+            {% if rating == 4 %}
+            ⭐⭐⭐⭐
+            {% endif %}
+            {% if rating == 5 %}
+            ⭐⭐⭐⭐⭐
+            {% endif %}
+        </span>
+           
+            </div>
+        </div>
+        </div>
+        
+        
+          
+
+        <figure class="position-absolute bottom-0 left-0 w-100000 d-none d-md-block mb-n2"><svg class="fill-white"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+            <path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+        </svg></figure>
+    </section>
+
+    <section class="section section-lg">
+        <div class="container">
+          <div class="row justify-content-center mb-5 mb-lg-6">
+            <div class="col-12 text-center">
+              <div class="alert alert-primary" role="alert">
+              <h2>Key Information</h2><br>
+            <ul style = "list-style-type:none">
+            <span style="font-size:16px">
+
+            <li>{{ point1 }} <i style="color:purple;"><a href="{{ source1 }}">[1]</a></i></li><br>
+            {% if point2 and source2 %}
+
+            <li>{{ point2 }} <i style="color:purple;"><a href="{{ source2 }}">[2]</a></i> </li><br>
+            {% endif %}
+            
+            {% if point3 and source3 %}
+            <li>{{ point3 }} <i style="color:purple;"><a href="{{ source3 }}">[3]</a></i></li><br>
+            {% endif %}
+
+            {% if point4 and source4 %}
+            <li>{{ point4 }} <i style="color:purple;"><a href="{{ source4 }}">[4]</a></i></li><br>
+            {% endif %}
+
+            {% if point5 and source5 %}
+            <li>{{ point5 }} <i style="color:purple;"><a href="{{ source4 }}">[5]</a></i></li><br>
+            {% endif %}
+
+            {% if point6 and source6 %}
+            <li>{{ point6 }} <i style="color:purple;"><a href="{{ source4 }}">[6]</a></i></li><br>
+            {% endif %} 
+            </span>
+            </ul>
+            </div>
+            </div>  
+          </div>
+
+          
+          
+          <div class="row justify-content-center mb-5 mb-lg-6">
+            <div class="col-6 col-md-5 text-center mb-4">
+              <div class="alert alert-primary" role="alert">
+              <span style="font-size: 16px;">
+              <h3 class="fw-bolder"><span style="font-size: 20px;">News</span></h3>
+              <p class="mb-4">
+                <ul style = "list-style-type:none">
+                <li>{{ news1 }} <i style="color:purple;"><a href="{{ news1source }}">[1]</a></i></li><br>
+                {% if news2 and news2source %}    
+                <li>{{ news2 }} <i style="color:purple;"><a href="{{ news2source }}">[2]</a></i> </li><br>
+                {% endif %}                
+                {% if news3 and news3source %}
+                <li>{{ news3 }} <i style="color:purple;"><a href="{{ news3source }}">[3]</a></i></li><br>
+                {% endif %}    
+                {% if news4 and news4source %}
+                <li>{{ news4 }} <i style="color:purple;"><a href="{{ news4source }}">[4]</a></i></li><br>
+                {% endif %}
+                </ul>
+              </p>
+            </div>
+            </div>
+
+            <div class="col-6 col-md-5 text-center mb-4">
+              <div class="alert alert-primary" role="alert">
+              <span style="font-size: 14px;">
+              <h3 class="fw-bolder"><span style="font-size: 20px;">Stats</span></h3>
+              <p class="mb-4">
+                <ul style = "list-style-type:none">
+                <li>{{ stat1 }} <i style="color:purple;"><a href="{{ stat1source }}">[1]</a></i></li><br>
+                {% if stat2 and stat2source  %}    
+                <li>{{ stat2 }} <i style="color:purple;"><a href="{{ stat2source }}">[2]</a></i> </li><br>
+                {% endif %}                
+                {% if stat3 and stat3source %}
+                <li>{{ stat3 }} <i style="color:purple;"><a href="{{ stat3source }}">[3]</a></i></li><br>
+                {% endif %}    
+                {% if stat4 and stat4source %}
+                <li>{{ stat4 }} <i style="color:purple;"><a href="{{ stat4source }}">[4]</a></i></li><br>
+                {% endif %} 
+                </ul>
+              </p>
+            </div>
+            </div>
+          </div>
+
+
+       
+                
+          
+          {% if not bcorp and not peta and not fairtrade %}
+
+          {% else %}
+            <h3 class="text-center"><span style="font-size: 20px;">Certificates</h3></span>
+            <div class="row justify-content-center mb-5 mb-lg-6">
+
+              {% if bcorp %}
+              <div class="col-6 col-md-3 text-center mb-4">
+                <img src="{% static 'images/bcorp.png' %}" alt="Company Logo" style="width:100px;height:120px;">    
+                <span style="font-size: 100px;">
+                <h3 class="fw-bolder"><span style="font-size: 20px;">B Corp</span></h3>
+                <p class="text-gray"><span style="font-size: 13px;">This business meets high standards of verified performance, accountability, and has transparency on factors from employee benefits and charitable giving to supply chain practices and input materials. </span></p>
+              </div>
+              {% endif %}
+
+              {% if peta %}
+              <div class="col-6 col-md-3 text-center mb-4">
+                <img src="{% static 'images/peta.png' %}" alt="Company Logo" style="width:100px;height:100px;">
+                <span style="font-size: 100px;">
+                <h3 class="fw-bolder"><span style="font-size: 20px;">PETA Cruelty-Free</span></h3>
+                <p class="text-gray"><span style="font-size: 13px;">This business does not conduct animal tests</span></p>
+              </div>
+              {% endif %}
+
+              {% if fairtrade %} 
+              <div class="col-6 col-md-3 text-center"> 
+                <img src="{% static 'images/fairtrade.png' %}" alt="Company Logo" style="width:100px;height:85px;"> 
+                <span style="font-size: 100px;">
+                <h3 class="fw-bolder"><span style="font-size: 20px;">Fairtrade</span></h3>
+                <p class="text-gray"><span style="font-size: 13px;">Social, environmental and economic aspects of this business' production lines are to a high standard</span></p>
+              </div>
+              {% endif %}
+
+            </div>
+          {% endif %}
+          
+      </section>
+      <footer class="footer pt-6 pb-5 bg-primary text-white">
+        <div class="container">
+           
+            
+            <div class="row">
+                <div class="col mb-md-0">
+                      
+                    <div class="col-12 text-center">
+                        <span style="font-family: monospace;">
+                        <h2><span style="font-family: Font Awesome 5 Free"><i>Comments</i></span></h2><br>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-100">
+                                    <!--Form for new comment!!!-->
+                                    {% if request.user.is_authenticated %}
+                                    <blockquote class="text-center" style="color: black;">
+                                      <form action="{% url 'company_page' company_name=company_name %}" method = "post">
+                                        {% csrf_token %}
+                                        {% for field in form %}
+                                                <span style="font-family: Font Awesome 5 Free"><i class='no-italics'>{{ field }}</i></span>
+                                        {% endfor %}
+                                        <button type="submit" class="btn btn-primary"><span style="font-family: Font Awesome 5 Free"><i class='no-italics'>Add Comment</i></span></button>
+                                      </form>
+                                    </blockquote>
+                                    {% else %}
+                                    <div class="col-12 text-center">
+                                      <span style="font-family: monospace;">
+                                      <h2><span style="font-family: Font Awesome 5 Free; font-size: 15px;"><i>Log in to leave a comment</i></span></h2><br>
+                                    </span>
+                                    </div> 
+                                    {% endif %}
+
+
+                                    {% for comment in comments %}
+                                        <blockquote class="text-center" style="color: black;">
+                                            <span style="font-family: Font Awesome 5 Free"><i class='no-italics'>{{ comment.2 }}</i></span> 
+                                            <footer class="blockquote-footer mt-3 text-primary">{{ comment.0 }} - <span style="font-size: 15px;"> {{ comment.1 }}  </span></footer>
+                                        </blockquote>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </footer>
+</main>
+
+
+{% endblock %}
